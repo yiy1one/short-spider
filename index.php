@@ -40,7 +40,7 @@
 				var floor_len = (floor.length > 10)?(floor.length - 10):(floor.length / 2);
 				var louceng = 1;
 				for (var i = 0; i < floor_len; i++) {
-					$("#result3").append("<label><input type='checkbox' name='check' value="+ louceng +">");
+					$("#result3").append("<div id='floor_"+louceng+"''><input type='checkbox' name='check'  value="+ louceng +">");
 					louceng++;
 					$("#result3").append("楼层：" + $("[id^='postnum']")[i].innerHTML);
 					$("#result3").append("<br />");
@@ -49,25 +49,35 @@
 					$("#result3").append("内容：" + $("td[id^='postmessage_']")[i].innerHTML);
 
 
-					 var bigPic = $("table[id*='pid']:eq("+i+") .pattl");
+					var bigPic = $("table[id*='pid']:eq("+i+") .pattl img");
 					 for(j = 0 ; j < bigPic.length ; j++){
-					 	$("#result3").append(bigPic[j].innerHTML);
+					 	$("#result3").append("<br />");
+					 	
+					 	$("#result3").append(bigPic[j].getAttribute("zoomfile"));
+					 	
 					 }
 
 					$("#result3").append("<hr />");
 
-					$("#result3").append("</label>");
+					$("#result3").append("</div>");
 
-					//console.log("用户名：" + $("table[id*='pid'] a.xw1")[i].innerHTML);
-					//console.log("内容：" + $("td[id^='postmessage_']")[i].innerHTML);
-					//console.log("1111111111111111111111111111111111111111111111111111111111111111111111111");
+
 				}
 
 			}
 
 			function makeMsg(){
-				$(":checked")
-				$
+				//$("#result4").append("<textarea>");
+
+				$("#result4").append("<p>编者按：</p>");
+
+				$("#result4").append("<p><strong>本文作者：<strong></p>");
+				$("#result4").append("<p><strong><strong></p>");
+				$("#result4").append("内容：" + $("td[id^='postmessage_']")[1].innerHTML);
+
+
+
+				//$("#result4").append("</textarea>");
 			}
 		</script>
 	</head>
@@ -90,6 +100,9 @@
 		<input type="button"  onclick="makeMsg()" value="制作"/>
 		<div id="result" style="display: none;"></div>
 		<div id="result2" style="display: none;"></div>
-		<div id="result3" style="width: 50%;display: inline;"></div>
+		<div id="result3" style="display: none;"></div>
+		<div id="result4" >
+			
+		</div>
 	</body>
 </html>
