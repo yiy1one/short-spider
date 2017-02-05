@@ -44,9 +44,16 @@
 					louceng++;
 					$("#result3").append("楼层：" + $("[id^='postnum']")[i].innerHTML);
 					$("#result3").append("<br />");
-					$("#result3").append("用户名：" + $("table[id*='pid'] a.xw1")[i].innerHTML);
+					$("#result3").append("用户名：" + $("table[id*='pid'] .authi a.xw1")[i].innerHTML);
 					$("#result3").append("<br />");
 					$("#result3").append("内容：" + $("td[id^='postmessage_']")[i].innerHTML);
+
+
+					 var bigPic = $("table[id*='pid']:eq("+i+") .pattl");
+					 for(j = 0 ; j < bigPic.length ; j++){
+					 	$("#result3").append(bigPic[j].innerHTML);
+					 }
+
 					$("#result3").append("<hr />");
 
 					$("#result3").append("</label>");
@@ -59,7 +66,8 @@
 			}
 
 			function makeMsg(){
-				console.log($(":checked"));
+				$(":checked")
+				$
 			}
 		</script>
 	</head>
